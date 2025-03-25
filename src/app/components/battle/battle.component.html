@@ -17,6 +17,9 @@
     </div>
   
     <button (click)="fight()">Fight!</button>
-    <h3 @if(winner!= "")>Winner: {{ winner  }} 🎉</h3>
+    @if(winner!== ''){
+
+      <h3 >Winner: {{ winner  }} 🎉</h3>
+    }
   </div>
   

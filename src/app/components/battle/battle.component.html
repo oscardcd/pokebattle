@@ -1,0 +1,22 @@
+<div>
+    <h2>Pokémon Battle!</h2>
+    
+    <div>
+      <input #poke1 type="text" placeholder="Enter Pokémon 1">
+      <button (click)="loadPokemon(poke1.value, 1)">Load</button>
+    </div>
+    
+    <div>
+      <input #poke2 type="text" placeholder="Enter Pokémon 2">
+      <button (click)="loadPokemon(poke2.value, 2)">Load</button>
+    </div>
+    
+    <div class="battlefield">
+      <app-pokemon-card [pokemon]="pokemon1"></app-pokemon-card>
+      <app-pokemon-card [pokemon]="pokemon2"></app-pokemon-card>
+    </div>
+  
+    <button (click)="fight()">Fight!</button>
+    <h3 @if(winner!= "")>Winner: {{ winner  }} 🎉</h3>
+  </div>
+  

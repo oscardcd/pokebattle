@@ -1,4 +1,4 @@
-<div>
+<div class="mx-auto w-50 bglight p-4" style="background-color: red;">
     <h2>Pokémon Battle!</h2>
     
     <div>
@@ -17,6 +17,9 @@
     </div>
   
     <button (click)="fight()">Fight!</button>
-    <h3 @if(winner!= "")>Winner: {{ winner  }} 🎉</h3>
+    @if(winner!== ''){
+
+      <h3 >Winner: {{ winner  }} 🎉</h3>
+    }
   </div>
   

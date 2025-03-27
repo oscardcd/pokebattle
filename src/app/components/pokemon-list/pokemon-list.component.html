@@ -1,1 +1,14 @@
 <p>pokemon-list works!</p>
+<div>
+    <ul class="lista-elementos">  
+        @for(pokemon of pokemonList; track pokemon.id){
+            <li class="elemento-item">
+                <div class="elemento-contenido">
+                    <h4>{{ pokemon.name }}</h4>
+                    <p>{{ pokemon.description }}</p>
+                </div>
+                <button class="btn btn-danger">Eliminar</button>
+            </li>
+        }
+    </ul>
+</div>

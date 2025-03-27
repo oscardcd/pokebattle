@@ -6,6 +6,7 @@ import {
   viewChild,
 } from '@angular/core';
 import { PokemonService } from '../../services/pokemon.service';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-pokemon-list',
@@ -13,7 +14,7 @@ import { PokemonService } from '../../services/pokemon.service';
   templateUrl: './pokemon-list.component.html',
   styleUrl: './pokemon-list.component.scss',
 })
-export class PokemonListComponent implements OnInit, AfterViewInit {
+export class PokemonListComponent implements OnInit{
   @ViewChild('pokemonCard') pokemonCard: any;
 
   pokemonList: any[] = [];
@@ -23,30 +24,28 @@ export class PokemonListComponent implements OnInit, AfterViewInit {
   observer!: IntersectionObserver;
 
   constructor(private pokemonService: PokemonService) {}
-  ngAfterViewInit(): void {
-    throw new Error('Method not implemented.');
-  }
+
   ngOnInit(): void {
-   this.loadPokemonList();
+    this.loadPokemonList();
   }
 
 
 
   private loadPokemonList() {
     this.loading = true;
-    // Simular llamada API
-    this.pokemonService.getPokemonList().subscribe((data) => {
-      this.pokemonList = data;
-      this.loading=false;
-    });
+    this.pokemonService.getPokemonList().pipe(
+      map(pokemons =>  this.pokemonList=[...pokemons]  )
+    );
+    
+
   }
 
-  private loadMorePokemons() {
-    this.loading = true;
-    // Simular llamada API
-    this.pokemonService.getPokemonList().subscribe((data) => {
-      this.pokemonList = this.pokemonList.concat(data);
-      this.loading = false;
-    });
-  }
+  // private loadMorePokemons() {
+  //   this.loading = true;
+  
+  //   this.pokemonService.getPokemonList().subscribe((data) => {
+  //     this.pokemonList = this.pokemonList.concat(data);
+  //     this.loading = false;
+  //   });
+  // }
 }

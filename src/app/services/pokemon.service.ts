@@ -1,7 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, provideHttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { map, Observable } from 'rxjs';
 import { Pokemon } from '../models/pokemon.model';
+import { response } from 'express';
+import { Pokemons } from '../models/pokemons.model';
 
 @Injectable({
   providedIn: 'root'
@@ -16,6 +18,8 @@ export class PokemonService {
   }
 
   getPokemonList(): Observable<Pokemon[]> {
-    return this.http.get<any[]>(this.apiUrl);
+    return this.http.get<Pokemons>(this.apiUrl).pipe(
+      map((response) => response.results || [])
+    );
   }
 }

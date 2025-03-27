@@ -1,40 +1,31 @@
-.lista-container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-  }
+// .pokemon-list {
+//   display: block;
+//   margin: 0 auto;
+//   max-width: 400px;
+//   padding: 20px;
+//   background-color: aqua;
+// }
   
-  .formulario-agregar {
-    margin-bottom: 30px;
-    padding: 20px;
-    background-color: #f8f9fa;
-    border-radius: 5px;
-  }
+//   .lista-elementos {
+//     list-style: none;
+//     padding: 0;
+//   }
   
-  .formulario-agregar input {
-    margin-bottom: 10px;
-  }
+//   .elemento-item {
+//     display: flex;
+//     justify-content: space-between;
+//     align-items: center;
+//     padding: 15px;
+//     margin-bottom: 10px;
+//     background-color: #fff;
+//     border: 1px solid #ddd;
+//     border-radius: 5px;
+//   }
   
-  .lista-elementos {
-    list-style: none;
-    padding: 0;
-  }
+//   .elemento-contenido {
+//     flex-grow: 1;
+//   }
   
-  .elemento-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px;
-    margin-bottom: 10px;
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-  }
-  
-  .elemento-contenido {
-    flex-grow: 1;
-  }
-  
-  .btn {
-    margin-left: 10px;
-  }
+//   .btn {
+//     margin-left: 10px;
+//   }

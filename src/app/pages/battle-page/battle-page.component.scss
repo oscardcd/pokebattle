@@ -1,0 +1,41 @@
+/* vista-integrada.component.css */
+.battle-page {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    padding: 1rem;
+    min-height: 80vh;
+  }
+  
+  .form-section {
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+  
+  .list-section {
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    overflow-y: auto;
+    max-height: 80vh;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .vista-container {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  /* Estilos para el formulario */
+  .form-group {
+    margin-bottom: 1rem;
+  }
+  
+  .error-message {
+    color: #dc3545;
+    font-size: 0.875rem;
+  }

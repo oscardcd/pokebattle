@@ -1,13 +1,9 @@
 
 <div class="pokemon-list">
     <ul class="lista-elementos">  
-        @for(pokemon of pokemonList; track pokemon.id){
+        @for(pokemon of pokemonList; track pokemon){
             <li class="elemento-item">
-                <div class="elemento-contenido">
-                    <h4>{{ pokemon.name }}</h4>
-                    <p>{{ pokemon.description }}</p>
-                </div>
-                <button class="btn btn-danger">Eliminar</button>
+                <app-pokemon-card [pokemon]="pokemon"></app-pokemon-card>
             </li>
         }
     </ul>

@@ -6,7 +6,12 @@ export class Pokemon {
     attack: number;
     defense: number;
     speed: number;
-    sprite: string; 
+    sprites: {
+      front_default: string;
+      front_shiny?: string;
+      back_default?: string;
+      back_shiny?: string;
+    } 
   
     constructor(
       id: number,
@@ -16,7 +21,7 @@ export class Pokemon {
       attack: number,
       defense: number,
       speed: number,
-      sprite: string
+      sprites: { front_default: string } 
     ) {
       this.id = id;
       this.name = name;
@@ -25,7 +30,7 @@ export class Pokemon {
       this.attack = attack;
       this.defense = defense;
       this.speed = speed;
-      this.sprite = sprite;
+      this.sprites = sprites;
     }
   }
   
